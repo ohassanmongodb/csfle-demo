@@ -38,6 +38,7 @@ import com.mongodb.client.model.vault.DataKeyOptions;
 import com.mongodb.client.vault.ClientEncryption;
 import com.mongodb.client.vault.ClientEncryptions;
 import com.mongodb.client.model.IndexOptions;
+import org.bson.conversions.Bson;
 
 
 /*
@@ -59,6 +60,7 @@ public class makeDataKey {
         // end-kmsproviders
 
         // start-datakeyopts
+        BsonDocument masterKeyProperties = new BsonDocument();
         masterKeyProperties.put("provider", new BsonString(kmsProvider));
         masterKeyProperties.put("key", new BsonString("<Master Key ARN>"));
         masterKeyProperties.put("region", new BsonString("<Master Key AWS Region>"));
