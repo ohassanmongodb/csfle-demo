@@ -44,7 +44,7 @@ import org.bson.Document;
  * - Attempts to find the upserted document with the normal client using an encrypted field
  * - Finds the upserted document with the normal client using a non-encrypted field
  */
-public class insertEncryptedDocument {
+public class InsertEncryptedDocument {
 
     public static void main(String[] args) throws Exception {
         String recordsDb = "medicalRecords";
@@ -54,8 +54,8 @@ public class insertEncryptedDocument {
         String keyVaultNamespace = "encryption.__keyVault";
         // end-key-vault
 
-        String connectionString = "mongodb://localhost:27017";
-
+        //String connectionString = "mongodb://localhost:27017";
+        String connectionString = args[0]; //TODO change this based on the connection string or pass it as first argument
         // start-kmsproviders
         Map<String, Map<String, Object>> kmsProviders = new HashMap<String, Map<String, Object>>();
         String kmsProvider = "aws";
